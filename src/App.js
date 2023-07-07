@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react'
+import TimerApp from './Components/TimerApp'      //importing the default export from the module 
+import  TodoApp from './Components/TodoApp'   //importing a specific named export - when the module exports multiple values or functions
+import Header from './Components/Header'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('timer')
+
+  const renderPage = () =>{
+    switch(currentPage){
+      case 'todo':
+        return <TodoApp />;
+      case 'timer':
+        return <TimerApp />;
+      default:
+        break;
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header setCurrentPage={setCurrentPage}>{currentPage}</Header>  
+
+      {renderPage()}
+
     </div>
   );
 }

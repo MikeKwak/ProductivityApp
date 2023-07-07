@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
+    background: black url(/public/images/star.jpg) center/cover;
+}
+
+.App{
+    position: relative;
+    overflow: hidden;
+
+    height: 350px;
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+
+    background-color: aliceblue;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+
+    .Header{
+        height: 80px;
+        background-color: #4A55A2;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 5px rgba(153, 149, 149, 0.5);
+    
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    
+        margin-bottom: 20px;   
+
+        .title{
+            color:rgb(222, 222, 222);
+        }
+
+        .nav{
+            position: absolute;
+            top: 12px;
+            right: 15px;
+        }
+    }
+}
+
+
+
+form button{
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+
+form button:hover{
+    transform: translateY(-14%);
+}
+
